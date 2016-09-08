@@ -1,0 +1,7 @@
+{
+  "title" : "test_a",
+  "type" : "test_measurement",
+  "power" : "350",
+  "frequency" : "1e9",
+  "good" : "true"
+}

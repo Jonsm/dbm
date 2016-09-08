@@ -1,0 +1,18 @@
+DBM OPTIONS:
+--------------------------------------------------------------
+dbm --help
+    Gets help.
+
+dbm --register [json file]
+    Registers a json file with parameters into the database.
+    The json must have a field called 'type' with the type of
+    measurement, i.e. 'rabi' or 't1'. Will generate a unique
+    identifier and print it.
+
+dbm --get [measurement type] [id]
+    Prints the parameters of the measurement with a specific
+    type and id in json format.
+
+dbm --eval [SQL Query]
+    Executes the SQL query. The queries can only be read, i.e.
+    SELECT, DESCRIBE, or SHOW.
