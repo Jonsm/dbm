@@ -1,5 +1,6 @@
 dbname = 'parameters'
-hostname = 'physfspscb0235'
+# hostname = 'physfspscb0235'
+hostname = 'localhost'
 
 adminconfig = {
     'user' : 'admin',

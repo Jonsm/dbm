@@ -102,7 +102,7 @@ def get_last_id(cursor):
 
 #check if an input is valid [0-9a-z_]
 def validate(input):
-    search = re.search("^[0-9a-z\_]+$", input)
+    search = re.search("^[0-9a-z\+\-\_]+$", input)
     if search == None:
         sys.exit("String " + input + " is invalid. Must be only lowercase, numbers, and underscore.")
     else:

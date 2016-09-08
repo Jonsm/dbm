@@ -2,6 +2,6 @@ from distutils.core import setup
 
 setup(
     name='dbm',
-    version='0.2',
+    version='0.25',
     packages=['dbm'],
 )

@@ -1,2 +1,2 @@
 @echo off
-E:\Python34\python.exe "E:\Users\administrator\Documents\Python\dbm\utils\main.py" %*
+C:\Python34\python.exe "C:\Users\nguyen89\Documents\Python\dbm\utils\main.py" %*

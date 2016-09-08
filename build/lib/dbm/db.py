@@ -12,8 +12,8 @@ def open_readonly_connection():
     return open_db_connection(dbm.config.read_only_config)
 
 #opens connection with root privileges
-def open_root_connection():
-    return open_db_connection(dbm.config.rootconfig)
+def open_admin_connection():
+    return open_db_connection(dbm.config.adminconfig)
 
 #creates connection to database, returns database object
 def open_db_connection(credentials):
@@ -88,8 +88,12 @@ def drop_table(cursor, name):
     cursor.execute("DROP TABLE " + validate(name) + ";")
 
 #add new column to a table
-def add_column(cursor, table, column):
-    cursor.execute("ALTER TABLE " + validate(table) + " ADD " + validate(column) + " varchar(255);")
+def add_column(cursor, table, column, default=None):
+    query = "ALTER TABLE " + validate(table) + " ADD " + validate(column) + " varchar(255)"
+    if (default):
+        query = query + " DEFAULT " + repr(validate(default))
+    query = query + ";"
+    cursor.execute(query)
 
 #gets the id of the most recently added row
 def get_last_id(cursor):
@@ -98,7 +102,7 @@ def get_last_id(cursor):
 
 #check if an input is valid [0-9a-z_]
 def validate(input):
-    search = re.search("^[0-9a-z\_]+$", input)
+    search = re.search("^[0-9a-z\+\-\_]+$", input)
     if search == None:
         sys.exit("String " + input + " is invalid. Must be only lowercase, numbers, and underscore.")
     else:
