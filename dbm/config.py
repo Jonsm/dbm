@@ -1,17 +1,16 @@
 dbname = 'parameters'
-# hostname = 'physfspscb0235'
 hostname = 'localhost'
 
 adminconfig = {
-    'user' : 'admin',
-    'password' : '0203158',
+    'user' : 'user',
+    'password' : 'pass',
     'host' : hostname,
     'database' : dbname
 }
 
 read_only_config = {
-    'user' : 'rdonly',
-    'password' : '5448136',
+    'user' : 'user',
+    'password' : 'pass',
     'host' : hostname,
     'database' : dbname
 }
